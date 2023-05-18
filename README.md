@@ -194,7 +194,7 @@ YoY Casualties = (DIVIDE([Current Year Casualties] - [Previous Year Casualties],
   
 ## Contact
 
-Edun Joshua Olubori - [connect on linkedin](https://www.linkedin.com/in/joshua-edun) - joshuaolubori@gmail.com
+Edun Joshua Olubori - [connect on linkedin](https://www.linkedin.com/in/abbabson) - webdeveloperbabson@gmail.com
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
