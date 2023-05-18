@@ -1,0 +1,89 @@
+PROJECT OUTLINE
+1.Requirement Gathering
+2. Identifying stakeholders
+3. Understanding the raw data
+4. Connecting to data with Power BI
+5. Data cleansing
+6. Data processing
+7. Data modeling
+8. Data vizualization
+9. Deriving Insights and presenting to stakeholders
+
+
+1. REQUIREMENT GATHERING
+Client wants to create a dashboard on road accidents for the year 2021 and 2022.
+
+a. Primary KPIs - Total casualties and total accident values for the current year and the YoY growth
+
+- Total casualties by accident severity for the current year and YoY growth
+
+b. Secondary KPIs - Total casualties with respect to vehicle type for the current year
+
+- Monthly trend showing comparison of casualties for the current year and previous year
+
+- Casualties for road type for current year
+
+- Current year casualties by area/location & day/night
+
+- Total casualties and total accidents by location
+
+2. IDENTIFYING STAKEHOLDERS
+- Emergency Services Departments
+- Road Safety Corps
+- Traffic Management Agencies
+- Police Force
+- General public
+
+3. UNDERSTANDING RAW DATA
+Data Grain: A single instance of a reported accident event in the UK in 2021 and 202
+Fields: description (datatype)
+Accident_Index: unique row indentifier (string)
+Accident Date: date of accident event (date)
+Day_of_Week: day of the week (string)
+Junction_Control: mechanism of traffic control at junction (string)
+Junction_Detail: type of junction (string)
+Accident_Severity: severity of accident (string)
+Latitude: latitude (float)
+Light_Conditions: light conditions at accident scene (string)	Local_Authority_(District): name of district (string)
+Carriageway_Hazards: hazards on the road if any
+Longitude: longitude (float)
+Number_of_Casualties: number of causaulties (integer)
+Number_of_Vehicles: number of vehicles involved in the accident (integer)
+Police_Force: Police force juridisctionn (string)
+Road_Surface_Conditions: condition of road surface (string)
+Road_Type: road type (string)
+Speed_limit: road speed limit in mph (string)	
+Time: time of day accident occurred (time)
+Urban_or_Rural_Area: Whether accident occurred in an urban or rural area (string)
+Weather_Conditions: weather condition at time of accident (string)
+Vehicle_Type: type of vehicle involved in the accident
+
+
+5. DATA CLEANSING
+Issues
+- Junction_Control column has, among others, two values "Auto traffic sigl" and "Auto traffic signal" of which the former is a misspelling of the latter
+
+- Instances where "Fatal" is misspelled as "Fetal" in Accident_Severity column
+
+- "Time" columnwas represented as a datetime data type in Power BI
+
+Fixes
+- Used the Replace Values feature to correct the misspellings of Issues 1 & 2
+- Changed the data type to time accordingly
+- All fixes were done in Power Query
+
+6. DATA PROCESSING
+- The data needs a calendar table so as to use Time Intelligence functions down the line.
+
+- Using the CALENDAR function, a new table with calculated, dynamic columns of Date, Month and Year was generated.
+
+7. DATA MODELING
+- a one-to-many active relationship was established between the calendar table and the data table 
+
+8. DATA VIZUALIZATION
+- Power BI
+
+9. DERIVING INSIGHTS
+- The vehicle type most involved in accidents was cars. This can be explained by the fact that most vehicles plying UK roads are cars
+
+- There is a general decrease in casualty counts in 2022 compared to 2021

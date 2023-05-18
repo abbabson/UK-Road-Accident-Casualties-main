@@ -1,0 +1,14 @@
+Count of Accidents = DISTINCTCOUNT(Data[Accident_Index])
+
+Current Year Accident Count = TOTALYTD(COUNT(Data[Accident_Index]),'Calendar'[Date])
+
+Current Year Casualties = TOTALYTD(SUM(Data[Number_of_Casualties]),'Calendar'[Date])
+
+Previous Year Accident Counts = CALCULATE(COUNT(Data[Accident_Index]), SAMEPERIODLASTYEAR('Calendar'[Date]))
+
+Previous Year Casualties = CALCULATE(SUM(Data[Number_of_Casualties]),
+SAMEPERIODLASTYEAR('Calendar'[Date]))
+
+YoY Accident Count = DIVIDE([Current Year Accident Count] - [Previous Year Accident Counts], [Previous Year Accident Counts])
+
+YoY Casualties = (DIVIDE([Current Year Casualties] - [Previous Year Casualties],[Previous Year Casualties]))
